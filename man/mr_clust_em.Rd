@@ -4,13 +4,30 @@
 \alias{mr_clust_em}
 \title{MR-Clust mixture model fitting}
 \usage{
-mr_clust_em(theta, theta.se, bx, by, bxse, byse, obs.names = NULL,
-  max.iter = 5000, tol = 1e-05, junk.sd = NULL, junk.mean = 0,
-  stop.bic.iter = 5, min.clust.search = 10,
-  results.list = list("all", "best"), cluster.membership = list(by.prob
-  = 0.1, bound = 0), plot.results = list("best", min.pr = 0.5),
-  trait.search = FALSE, trait.pvalue = 1e-05, proxy.r2 = 0.8,
-  catalogue = "GWAS", proxies = "None", build = 37)
+mr_clust_em(
+  theta,
+  theta.se,
+  bx,
+  by,
+  bxse,
+  byse,
+  obs.names = NULL,
+  max.iter = 5000,
+  tol = 1e-05,
+  junk.sd = NULL,
+  junk.mean = 0,
+  stop.bic.iter = 5,
+  min.clust.search = 10,
+  results.list = list("all", "best"),
+  cluster.membership = list(by.prob = 0.1, bound = 0),
+  plot.results = list("best", min.pr = 0.5),
+  trait.search = FALSE,
+  trait.pvalue = 1e-05,
+  proxy.r2 = 0.8,
+  catalogue = "GWAS",
+  proxies = "None",
+  build = 37
+)
 }
 \arguments{
 \item{theta}{numeric vector of length the number of variants, the i-th element is a ratio-estimate for the i-th genetic variant.}

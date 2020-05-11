@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589217869763.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "64818528",
+    "id" : "6D6783FC",
+    "lastKnownWriteTime" : 1589217875,
+    "last_content_update" : 1589217875420,
+    "path" : "~/GitHub/mrclust/R/scaled.dnorm.R",
+    "project_path" : "R/scaled.dnorm.R",
+    "properties" : {
+        "cursorPosition" : "2,15",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

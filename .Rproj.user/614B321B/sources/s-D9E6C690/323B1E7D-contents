@@ -66,7 +66,7 @@ mr_clust_em = function(theta, theta.se, bx, by, bxse, byse,
 
       if(is.null(init.clust.means) | is.null(init.clust.probs)){
         if(i > 0 & i != m){
-          init.conds = stats::kmeans(x = theta, centers = i, iter.max = 5e3);
+          init.conds = kmeans(x = theta, centers = i, iter.max = 5e3);
           clust.means =  as.numeric(init.conds$centers);
           clust.probs = table(init.conds$cluster)/m;
           init.conds;clust.means;clust.probs
@@ -113,7 +113,7 @@ mr_clust_em = function(theta, theta.se, bx, by, bxse, byse,
         if(junk.mixture | null.mixture){
           ### junk.mixture parameters
           sum.pr = 0;
-          junk.obs = sum(2*(1- stats::pnorm(theta - stats::median(theta), 0,theta.se))<0.05);
+          junk.obs = sum(2*(1- pnorm(theta - median(theta), 0,theta.se))<0.05);
           #junk.obs = abs(theta/theta.se) < 1.96;
           if(junk.mixture & !fix.junk.prob){
             if(sum(junk.obs) == 0){

@@ -6,7 +6,7 @@ init.clust.mn.pr = function(theta, range = length(theta)-1, iters = 1e4){
   for(i in 1:iters){
     tmp.dta = theta;
     if(length(range)>1){num.c = sample(range,1)}else{num.c = range}
-    tmp.res = stats::kmeans(tmp.dta, num.c);
+    tmp.res = stats:kmeans(tmp.dta, num.c);
     dta[[i]] = tmp.res$cluster;
     dta.mn[[i]] = as.numeric(tmp.res$centers);
     dta.bic[i] = kmeansBIC(tmp.res)
@@ -18,12 +18,12 @@ init.clust.mn.pr = function(theta, range = length(theta)-1, iters = 1e4){
 
   m = length(theta);
   tmp.dta = sample(theta, m);
-  tmp.res = stats::kmeans(tmp.dta, num.c);
+  tmp.res = kmeans(tmp.dta, num.c);
   tmp.pr = table(tmp.res$cluster);
 
   for(i in 1:(iters-1)){
     tmp.dta = sample(theta, m);
-    tmp.res = stats::kmeans(tmp.dta, num.c);
+    tmp.res = kmeans(tmp.dta, num.c);
     tmp.pr =  tmp.pr + table(tmp.res$cluster);
   }
   tmp.pr =  tmp.pr/(m*iters)

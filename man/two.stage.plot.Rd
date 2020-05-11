@@ -13,7 +13,7 @@ two.stage.plot(res, bx, by, bxse, byse, obs.names)
 
 \item{by}{numeric vector of length the number of variants, the i-th element is the estimated regression coefficient - i.e. beta-y value - relating the i-th genetic variant to the outcome.}
 
-\item{bxse}{numeric vector of length the number of variants, the i-th element is the standard error of the estimated regression coefficient relating the i-th genetic variant to the risk-factor.}
+\item{bxse, byse}{numeric vector of length the number of variants, the i-th element is the standard error of the estimated regression coefficient relating the i-th genetic variant to the risk-factor.}
 
 \item{obs.names}{character vector of length the number of variants, the i-th element is the name of the i-th genetic variants - e.g. the rsID.}
 }

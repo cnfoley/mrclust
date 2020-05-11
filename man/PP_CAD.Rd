@@ -4,7 +4,8 @@
 \name{PP_CAD}
 \alias{PP_CAD}
 \title{Genetic association data from pulse pressure (PP) and coronary artery disease (CAD) GWAS.}
-\format{A data frame with 121 rows and 8 variables:
+\format{
+A data frame with 121 rows and 8 variables:
 \describe{
   \item{chr.pos}{chromosome position}
   \item{rsid}{RSID}
@@ -14,7 +15,8 @@
   \item{byse}{standard error of estimated regression coefficient with outcome, CAD}
   \item{a1}{a1 allele}
   \item{a2}{a2 allele}
-}}
+}
+}
 \source{
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6284793/}
 

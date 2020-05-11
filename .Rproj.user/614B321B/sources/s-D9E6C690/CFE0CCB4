@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589217411994.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2988917513",
+    "id" : "CFE0CCB4",
+    "lastKnownWriteTime" : 1589217463,
+    "last_content_update" : 1589217463190,
+    "path" : "~/GitHub/mrclust/R/mr_clust_em.R",
+    "project_path" : "R/mr_clust_em.R",
+    "properties" : {
+        "cursorPosition" : "115,65",
+        "scrollLine" : "100"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
