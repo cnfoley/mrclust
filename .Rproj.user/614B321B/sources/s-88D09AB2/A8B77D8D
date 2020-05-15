@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589559323529.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A8B77D8D",
+    "lastKnownWriteTime" : 1589559338,
+    "last_content_update" : 1589559338298,
+    "path" : "~/GitHub/mrclust/R/clust_inc_list.R",
+    "project_path" : "R/clust_inc_list.R",
+    "properties" : {
+        "cursorPosition" : "26,61",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

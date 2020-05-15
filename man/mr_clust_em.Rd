@@ -19,7 +19,7 @@ mr_clust_em(
   stop.bic.iter = 5,
   min.clust.search = 10,
   results.list = list("all", "best"),
-  cluster.membership = list(by.prob = 0.1, bound = 0),
+  cluster.membership = list(by_prob = 0.1, bound = 0),
   plot.results = list("best", min.pr = 0.5),
   trait.search = FALSE,
   trait.pvalue = 1e-05,
@@ -58,7 +58,7 @@ mr_clust_em(
 
 \item{results.list}{character list allowing users to choose whether to return a table with the variants assigned to: "all" of the clusters; a single "best" cluster or; both. By default we return both, i.e. results.list = list("all", "best").}
 
-\item{cluster.membership}{numeric list which allows users to output a list which, for each cluster, returns the variants assigned to the cluster by stratified by the probability of belonging to the cluster. By default, cluster.membership = list(by.prob = 0.1, bound = 0); so that MRClust returns a list, which for each cluster, outputs the variants assigned to the cluster with probability between (0.9,1); (0.8,0.9);... and finally; (0.1,0), i.e. by probability increments 0.1 from 1 to a lower bound of 0.}
+\item{cluster.membership}{numeric list which allows users to output a list which, for each cluster, returns the variants assigned to the cluster by stratified by the probability of belonging to the cluster. By default, cluster.membership = list(by_prob = 0.1, bound = 0); so that MRClust returns a list, which for each cluster, outputs the variants assigned to the cluster with probability between (0.9,1); (0.8,0.9);... and finally; (0.1,0), i.e. by probability increments 0.1 from 1 to a lower bound of 0.}
 
 \item{plot.results}{numeric list which allows users to plot the output of MRClust. By default, plot.results = list("best", min.pr = 0.5); so that the best clustering is plotted with variants assigned to a cluster with probability above 0.5.}
 

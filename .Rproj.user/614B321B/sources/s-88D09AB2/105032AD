@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589559308693.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "105032AD",
+    "lastKnownWriteTime" : 1589559322,
+    "last_content_update" : 1589559322036,
+    "path" : "~/GitHub/mrclust/R/best_clust.R",
+    "project_path" : "R/best_clust.R",
+    "properties" : {
+        "cursorPosition" : "13,76",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

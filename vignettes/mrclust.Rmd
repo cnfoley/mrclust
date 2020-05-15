@@ -159,7 +159,7 @@ The results reveal that MR-Clust identified K=6 clusters in the SBP-CAD data: a 
 # Identified clusters
 ######################
 
-clusters = unique(res_em$results$best$cluster.class); # same answer if we type unique(res_em$results$all$cluster.class)
+clusters = unique(res_em$results$best$cluster_class); # same answer if we type unique(res_em$results$all$cluster_class)
 clusters[order(clusters)];
 
 ######################
@@ -263,7 +263,7 @@ res_em = mr_clust_em(theta=ratio.est, theta.se=ratio.est.se, bx=bx, by=by, bxse=
                        obs.names = snp.names, max.iter = 5e3, tol = 1e-5,
                        junk.mean = 0,
                        results.list = list("all", "best"),
-                       cluster.membership = list(by.prob = 0.25, bound = 0.75),
+                       cluster.membership = list(by_prob = 0.25, bound = 0.75),
                        plot.results = list("best", min.pr = 0.5),
                        trait.search = TRUE, trait.pvalue = 1e-5, proxy.r2 = 0.8,
                        catalogue = "GWAS", proxies = "None", build = 37);
@@ -291,7 +291,7 @@ The variable "trait" contains information on the traits identified as having an 
 ```{r}
 ############################################################
 # Setting
-# "cluster.membership = list(by.prob = 0.25, bound = 0.75)"
+# "cluster.membership = list(by_prob = 0.25, bound = 0.75)"
 # in the argument of "mr_clust_em"
 # returns:
 ############################################################
@@ -308,7 +308,7 @@ We continue by inspecting results from the largest cluster of traits in the data
 # Count the number of variants in each cluster 
 ###############################################
 
-tab.clust = table(res_em$results$best$cluster.class)
+tab.clust = table(res_em$results$best$cluster_class)
 tab.clust;
 
 ##########################################################
