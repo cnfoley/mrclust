@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1190037603",
+    "hash" : "0",
     "id" : "7920ADF7",
-    "lastKnownWriteTime" : 1589217229,
-    "last_content_update" : 1589217229856,
+    "lastKnownWriteTime" : 1589552430,
+    "last_content_update" : 1589552430091,
     "path" : "~/GitHub/mrclust/R/best.clust.R",
     "project_path" : "R/best.clust.R",
     "properties" : {
-        "cursorPosition" : "12,120",
+        "cursorPosition" : "7,3",
         "scrollLine" : "0"
     },
     "read_only" : false,

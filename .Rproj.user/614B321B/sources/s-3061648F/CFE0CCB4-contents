@@ -47,11 +47,13 @@ mr_clust_em = function(theta, theta.se, bx, by, bxse, byse,
   # initial parameter values
 
   m = length(theta);
-  if(is.null(cluster.sizes)){cluster.sizes = 0:m};
+  # AM: if removed as always true due to hard-coded options
+  cluster.sizes = 0:m;
   if(is.null(obs.names)){obs.names = paste0("snp_",1:m)};
 
   num.clust = length(cluster.sizes);
-  if(rand.init){num.clust = num.clust*rand.num};
+  # AM: if removed as always true due to hard-coded options
+  num.clust = num.clust*rand.num;
 
   bic.clust = bic.clust.mx = vector();
   clust.mn = vector('list', num.clust);
@@ -276,7 +278,7 @@ mr_clust_em = function(theta, theta.se, bx, by, bxse, byse,
                        junk.mean = mu, junk.sd = sig, null.mixture = null.mixture, null.mean = mu.null, null.sd = sig.null,
                        obs.names = obs.names, clust.size.prior = clust.size.prior, prior = bic.prior);
   results.all = results[order(results$cluster),];
-  results.best = best.clust(results)
+  results.best = best_clust(results)
 
   if(!is.null(cluster.membership)){
     variant.clusters = clust.inc.list(results, by.prob = cluster.membership$by.prob, bound = cluster.membership$bound);

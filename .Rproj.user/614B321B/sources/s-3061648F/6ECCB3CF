@@ -1,25 +1,25 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1589217335605.000,
+    "created" : 1589217337882.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "269D7AC0",
-    "lastKnownWriteTime" : 1589217879,
-    "last_content_update" : 1589217879,
-    "path" : "~/GitHub/mrclust/NAMESPACE",
-    "project_path" : "NAMESPACE",
+    "id" : "6ECCB3CF",
+    "lastKnownWriteTime" : 1589219056,
+    "last_content_update" : 1589219056196,
+    "path" : "~/GitHub/mrclust/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
     "properties" : {
-        "cursorPosition" : "0,0",
+        "cursorPosition" : "18,4",
         "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 4,
+    "relative_order" : 5,
     "source_on_save" : false,
     "source_window" : "",
-    "type" : "r_namespace"
+    "type" : "dcf"
 }

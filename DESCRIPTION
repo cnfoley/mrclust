@@ -12,10 +12,10 @@ Imports:
   ggplot2, 
   RColorBrewer, 
   mclust, 
-  data.table, 
   MendelianRandomization
 RoxygenNote: 7.1.0
 Suggests: 
     knitr,
+    data.table, 
     rmarkdown
 VignetteBuilder: knitr
