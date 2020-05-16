@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2001533162",
+    "hash" : "2301768466",
     "id" : "6449CC43",
-    "lastKnownWriteTime" : 1589560382,
-    "last_content_update" : 1589560382950,
+    "lastKnownWriteTime" : 1589583779,
+    "last_content_update" : 1589583779568,
     "path" : "~/GitHub/mrclust/R/two_stage_plot.R",
     "project_path" : "R/two_stage_plot.R",
     "properties" : {
-        "cursorPosition" : "3,3",
-        "scrollLine" : "2"
+        "cursorPosition" : "2,77",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [

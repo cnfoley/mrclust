@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589560472072.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3267448441",
+    "id" : "79F89218",
+    "lastKnownWriteTime" : 1589616981,
+    "last_content_update" : 1589616981954,
+    "path" : "~/GitHub/mrclust/R/theta_updt.R",
+    "project_path" : "R/theta_updt.R",
+    "properties" : {
+        "cursorPosition" : "26,0",
+        "scrollLine" : "11"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

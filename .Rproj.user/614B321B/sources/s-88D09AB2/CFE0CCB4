@@ -5,21 +5,21 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "733376139",
+    "hash" : "1012501760",
     "id" : "CFE0CCB4",
-    "lastKnownWriteTime" : 1589560073,
-    "last_content_update" : 1589560073976,
+    "lastKnownWriteTime" : 1589645066,
+    "last_content_update" : 1589645066396,
     "path" : "~/GitHub/mrclust/R/mr_clust_em.R",
     "project_path" : "R/mr_clust_em.R",
     "properties" : {
-        "cursorPosition" : "96,24",
-        "scrollLine" : "82"
+        "cursorPosition" : "76,69",
+        "scrollLine" : "69"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
     "relative_order" : 7,
-    "source_on_save" : false,
+    "source_on_save" : true,
     "source_window" : "",
     "type" : "r_source"
 }

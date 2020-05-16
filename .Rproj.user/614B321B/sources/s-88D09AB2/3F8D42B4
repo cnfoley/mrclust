@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589617260090.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4070083569",
+    "id" : "3F8D42B4",
+    "lastKnownWriteTime" : 1589617264,
+    "last_content_update" : 1589617264853,
+    "path" : "~/GitHub/mrclust/R/null_den.R",
+    "project_path" : "R/null_den.R",
+    "properties" : {
+        "cursorPosition" : "0,5",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 20,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

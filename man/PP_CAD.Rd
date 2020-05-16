@@ -3,16 +3,19 @@
 \docType{data}
 \name{PP_CAD}
 \alias{PP_CAD}
-\title{Genetic association data from pulse pressure (PP) and coronary artery disease (CAD) GWAS.}
+\title{Genetic association data from pulse pressure (PP) and coronary artery disease
+ (CAD) GWAS.}
 \format{
 A data frame with 121 rows and 8 variables:
 \describe{
   \item{chr.pos}{chromosome position}
   \item{rsid}{RSID}
   \item{bx}{estimated regression coefficient with risk-factor, SBP}
-  \item{bxse}{standard error of estimated regression coefficient with risk-factor, SBP}
+  \item{bxse}{standard error of estimated regression coefficient with
+   risk-factor, SBP}
   \item{by}{estimated regression coefficient with outcome, CAD}
-  \item{byse}{standard error of estimated regression coefficient with outcome, CAD}
+  \item{byse}{standard error of estimated regression coefficient with
+   outcome, CAD}
   \item{a1}{a1 allele}
   \item{a2}{a2 allele}
 }
@@ -26,6 +29,8 @@ A data frame with 121 rows and 8 variables:
 PP_CAD
 }
 \description{
-A dataset containing chromosome position, rsid and allele information as well as estimates of the regression coefficients and associated standards errors from the SBP and CAD GWAS.
+A dataset containing chromosome position, rsid and allele information as well
+ as estimates of the regression coefficients and associated standards errors
+  from the SBP and CAD GWAS.
 }
 \keyword{datasets}

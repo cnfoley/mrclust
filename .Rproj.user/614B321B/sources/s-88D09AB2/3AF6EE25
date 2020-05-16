@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589574627745.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3AF6EE25",
+    "lastKnownWriteTime" : 1589574632,
+    "last_content_update" : 1589574632998,
+    "path" : "~/GitHub/mrclust/R/gen_t_scale.R",
+    "project_path" : "R/gen_t_scale.R",
+    "properties" : {
+        "cursorPosition" : "2,71",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

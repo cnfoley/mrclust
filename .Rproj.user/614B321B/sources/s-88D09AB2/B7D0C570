@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589576076660.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3892122242",
+    "id" : "B7D0C570",
+    "lastKnownWriteTime" : 1589647262,
+    "last_content_update" : 1589647262349,
+    "path" : "~/GitHub/mrclust/R/junk_clust_plot.R",
+    "project_path" : "R/junk_clust_plot.R",
+    "properties" : {
+        "cursorPosition" : "132,16",
+        "scrollLine" : "123"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 11,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

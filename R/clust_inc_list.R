@@ -17,7 +17,7 @@ clust_inc_list <- function(dta, by_prob = 0.2, bound = 0) {
     for (j in 1:sub_grps) {
       p_mx <- 1 - (j - 1) * by_prob
       p_mn <- 1 - j * by_prob
-      if (p.mx <= bound) {
+      if (p_mx <= bound) {
         break
       }
       if ((!bound == 0) & (1 - j * by_prob < bound)) {

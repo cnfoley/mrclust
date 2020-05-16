@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589583718157.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "771668908",
+    "id" : "1C38D281",
+    "lastKnownWriteTime" : 1589583749,
+    "last_content_update" : 1589583749214,
+    "path" : "~/GitHub/mrclust/R/PP_CAD.R",
+    "project_path" : "R/PP_CAD.R",
+    "properties" : {
+        "cursorPosition" : "16,5",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 17,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

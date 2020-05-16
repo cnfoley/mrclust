@@ -27,9 +27,31 @@ library(mrclust)
 # Introduction
 
 
-MR-Clust is used to investigate the presence of clustered heterogeneity in Mendelian randomization analyses. Clustered heterogeneity is identified by the presence of two or more distinct clusters of genetic variants - such that genetic variants within a cluster recover similar estimates of the causal effect of the risk-factor on the outcome, i.e. their ratio-estimates are similar in direction, magnitude and precision. A cluster will typically comprise of two or more genetic variants and the ratio-estimates and standard errors of these variants are then used to compute the cluster centres. A cluster might represent a distinct pathway with which the risk-factor is related to the outcome and hence clustered heterogeneity is interesting to investigate as the identity of the genetic variants in the clusters may reveal information about the risk factor and how it relates to the outcome. 
+MR-Clust is used to investigate the presence of clustered heterogeneity in
+Mendelian randomization analyses. Clustered heterogeneity is identified by the
+presence of two or more distinct clusters of genetic variants - such that
+genetic variants within a cluster recover similar estimates of the causal effect
+of the risk-factor on the outcome, i.e. their ratio-estimates are similar in
+direction, magnitude and precision. A cluster will typically comprise of two or
+more genetic variants and the ratio-estimates and standard errors of these
+variants are then used to compute the cluster centres. A cluster might represent
+a distinct pathway with which the risk-factor is related to the outcome and
+hence clustered heterogeneity is interesting to investigate as the identity
+of the genetic variants in the clusters may reveal information about the risk
+factor and how it relates to the outcome. 
 
-MR-Clust performs likelihood based clustering on a sample of ratio-estimates and associated standard error information. The MR-Clust mixture-model automatically accounts for the possibility that some or all of the ratio-estimates may be drawn under two distributions - the results from which we do not wish to interpret - (i) a null distribution, in which the ratio-estimates are centred around zero and; (ii) a junk distribution, which aims to model highly dispersed ratio-estimates which are considered outliers in the sample. In some situations, the junk-component may fail to capture all outliers in the sample, instead these observations may appear in clusters comprising a single gnetic variant. Unless there is some underlying motivation for doing so, we do not recommend interpreting results from clusters containing one (or a small numerber of) genetic variants.
+MR-Clust performs likelihood based clustering on a sample of ratio-estimates and
+associated standard error information. The MR-Clust mixture-model automatically
+accounts for the possibility that some or all of the ratio-estimates may be
+drawn under two distributions - the results from which we do not wish to
+interpret - (i) a null distribution, in which the ratio-estimates are centred
+around zero and; (ii) a junk distribution, which aims to model highly dispersed
+ratio-estimates which are considered outliers in the sample. In some situations,
+the junk-component may fail to capture all outliers in the sample, instead these
+observations may appear in clusters comprising a single gnetic variant. Unless
+there is some underlying motivation for doing so, we do not recommend
+interpreting results from clusters containing one (or a small number of)
+genetic variants.
 
 
 # Installation
@@ -47,23 +69,28 @@ install_github("cnfoley/mrclust", build_vignettes = TRUE)
 
 # Using MR-Clust 
 
-We introduce the MR-Clust package by allowing users to replicate an analysis from our manuscript. 
+We introduce the MR-Clust package by allowing users to replicate an analysis
+from our manuscript. 
 
 ## Replicating the SBP-CAD applied analysis
 
-Here we replicate the results from the MR-Clust manuscript: assessing the presence of clustered heterogeneity in the analysis of systolic blood pressure (SBP) and it's effects on coronary artery disease (CAD) risk. We begin by loading the package and the SBP/CAD summary data. These data are avaiable with the package and can be found by typing
+Here we replicate the results from the MR-Clust manuscript: assessing the
+presence of clustered heterogeneity in the analysis of systolic blood pressure
+(SBP) and it's effects on coronary artery disease (CAD) risk. We begin by
+loading the package and the SBP/CAD summary data. These data are avaiable with
+the package and can be found by typing
 
 ```{r}
 library(mrclust)
-sbp.cad <- mrclust::SBP_CAD
-head(sbp.cad)
+sbp_cad <- mrclust::SBP_CAD
+head(sbp_cad)
 ```
 
 Data from the other BP trait analyses, i.e. the diastolic blood pressure (DBP) and pulse pressure (PP) analyses, can be accessed similarly:
 
 ```{r}
-# dbp.cad <- mrclust::DBP_CAD
-# pp.cad <- mrclust::PP_CAD
+# dbp_cad <- mrclust::DBP_CAD
+# pp_cad <- mrclust::PP_CAD
 ```
 
 In the combined systolic blood pressure (SBP) and coronary artery disease (CAD) dataset there are 8 variables: chromosome position, "chr.pos"; RSID; genetic associations with risk-factor SBP, "bx"; standard error of the genetic association with risk-factor SBP, "bxse"; genetic associations with outcome CAD, "by"; standard error of the genetic association with outcome CAD, "byse" and; the A1 and A2 alleles, "a1" and "a2". A description of these data is found by typing:
@@ -79,27 +106,27 @@ The function "mrclust" (minimally) requires the following summary data informati
 # estimates of the G-X associations and their standard errors
 ##############################################################
 
-bx = sbp.cad$bx;
-bxse = sbp.cad$bxse;
+bx = sbp_cad$bx;
+bxse = sbp_cad$bxse;
 
 ##############################################################
 # estimates of the G-Y associations and their standard errors
 ##############################################################
 
-by = sbp.cad$by;
-byse = sbp.cad$byse;
+by = sbp_cad$by;
+byse = sbp_cad$byse;
 
 ###########################################
 # ratio-estimates and their standard errors
 ###########################################
 
-ratio.est = by/bx;
-ratio.est.se = byse/abs(bx);
+ratio_est = by/bx;
+ratio_est_se = byse/abs(bx);
 
 #####################
 # Names for the snps
 #####################
-snp.names = sbp.cad$chr.pos;
+snp_names = sbp_cad$chr.pos;
 ```
 
 ## Running an MR-Clust analysis 
@@ -112,8 +139,8 @@ To run a default MR-Clust analysis we use the "mr_clust_em" function (which empl
 ########### SBP-CAD analysis
 ############################
 
-res_em = mr_clust_em(theta=ratio.est, theta.se=ratio.est.se, bx=bx, by=by, bxse=bxse, byse=byse,
-                       obs.names = snp.names);
+res_em = mr_clust_em(theta = ratio_est, theta_se = ratio_est_se, bx = bx,
+                     by = by, bxse = bxse, byse = byse, obs_names = snp_names);
 
 ```
 
@@ -173,7 +200,12 @@ K;
 ### Summarising variants by allocation probability within each cluster
 
 
-MR-Clust allows users to stratify the variants in a cluster by deciles of the allocation probability, which might help when aiming to prioritise the variants with high quality allocation probabilities for follow-up analyses. We do this using the second summary returned by MR-Clust: "cluster.membership". This is a list - of length the number of clusters - which, for each cluster, batches the variants, we use cluster 1 to illustrate the idea:
+MR-Clust allows users to stratify the variants in a cluster by deciles of the
+allocation probability, which might help when aiming to prioritise the variants
+with high quality allocation probabilities for follow-up analyses. We do this 
+using the second summary returned by MR-Clust: "cluster.membership". This is a
+list - of length the number of clusters - which, for each cluster, batches the
+variants, we use cluster 1 to illustrate the idea:
 
 ```{r}
 ######################
@@ -188,7 +220,11 @@ names(res_em$cluster.membership)
 
 head(res_em$cluster.membership$cluster_1);
 ```
-There are 5 variants assigned to cluster 1 with an allocation probability in the range (0.9,1), there is 1 variant with an allocation prbability in the range (0.8, 0.9) and no variants with allocation probabilities in the range (0.7,0.8). We can single out the variants with the largest allocation probabilities by typing
+There are 5 variants assigned to cluster 1 with an allocation probability in the
+range (0.9,1), there is 1 variant with an allocation prbability in the range
+(0.8, 0.9) and no variants with allocation probabilities in the range (0.7,0.8).
+We can single out the variants with the largest allocation probabilities by
+typing
 
 ```{r}
 #########################################################
@@ -201,7 +237,9 @@ res_em$cluster.membership$cluster_1$pr_range_1_to_0.9;
 ## Plotting results
 
 
-A scatter plot of results from the two-stage regression is returned by default with each variant colour coded according to their cluster assignment (using the best clustering). This is found by typing
+A scatter plot of results from the two-stage regression is returned by default
+with each variant colour coded according to their cluster assignment (using the
+best clustering). This is found by typing
 
 ```{r}
 ###################################

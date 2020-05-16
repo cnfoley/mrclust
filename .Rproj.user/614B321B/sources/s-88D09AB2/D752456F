@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589644214293.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3853930613",
+    "id" : "D752456F",
+    "lastKnownWriteTime" : 1589644393,
+    "last_content_update" : 1589644393012,
+    "path" : "~/GitHub/mrclust/R/log_norm.R",
+    "project_path" : "R/log_norm.R",
+    "properties" : {
+        "cursorPosition" : "4,48",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 21,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589574578673.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1935522315",
+    "id" : "E73BB4D3",
+    "lastKnownWriteTime" : 1589644621,
+    "last_content_update" : 1589644621282,
+    "path" : "~/GitHub/mrclust/R/orientate.R",
+    "project_path" : "R/orientate.R",
+    "properties" : {
+        "cursorPosition" : "0,30",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

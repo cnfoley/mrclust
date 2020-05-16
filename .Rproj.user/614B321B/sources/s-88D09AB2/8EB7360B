@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589616986777.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3112958215",
+    "id" : "8EB7360B",
+    "lastKnownWriteTime" : 1589644822,
+    "last_content_update" : 1589644822116,
+    "path" : "~/GitHub/mrclust/R/pheno_search.R",
+    "project_path" : "R/pheno_search.R",
+    "properties" : {
+        "cursorPosition" : "13,66",
+        "scrollLine" : "6"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

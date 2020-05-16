@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589582520776.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BE5B2194",
+    "lastKnownWriteTime" : 1589616982,
+    "last_content_update" : 1589616982012,
+    "path" : "~/GitHub/mrclust/R/rij.R",
+    "project_path" : "R/rij.R",
+    "properties" : {
+        "cursorPosition" : "12,18",
+        "scrollLine" : "5"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
