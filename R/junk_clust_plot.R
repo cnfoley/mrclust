@@ -114,24 +114,23 @@ junk_clust_plot <- function(res, xrange = NULL, sig = NULL,
   )
 
 
-  p <- ggplot2::ggplot(data = res, ggplot2::aes(theta, jit_clusts)) +
-    ggplot2::geom_point(ggplot2::aes(colour = cluster_class), size = 1.55) +
-    ggplot2::scale_color_manual(values = cbpalette) +
-    ggplot2::geom_errorbarh(
-      ggplot2::aes(xmin = theta - 1.96 * theta_se,
-                   xmax = theta + 1.96 * theta_se, 
-                   color = cluster_class), linetype = "solid") +
-    ggplot2::geom_hline(yintercept = 0, linetype = "dotted",
-                        color = cbpalette[1], lwd = 0.5) +
+p <- ggplot2::ggplot(data = res, ggplot2::aes(theta, jit_clusts))
+p <- p + ggplot2::geom_point(ggplot2::aes(colour = cluster_class), size = 1.55)
+p <- p + ggplot2::scale_color_manual(values = cbpalette)
+p <- p + ggplot2::geom_errorbarh(
+     ggplot2::aes(xmin = theta - 1.96 * theta_se,
+                   xmax = theta + 1.96 * theta_se,
+                   color = cluster_class), linetype = "solid")
+p <- p + ggplot2::geom_hline(yintercept = 0, linetype = "dotted",
+                        color = cbpalette[1], lwd = 0.5) 
     if (junk_mixture) {
-      ggplot2::stat_function(
-        fun = gen_t_scale,
+p <- p + ggplot2::geom_line(stat = "function", fun = gen_t_scale,
         args = with(res, c(df = 4, mu = mu, sig = sig, log = FALSE,
                            scale = shrink)),
         ggplot2::aes(colour = "Junk density")
       )
-    } else {NULL} +
-    ggplot2::ylim(miny, maxy)
+    }
+p <- p + ggplot2::ylim(miny, maxy)
   clusts <- unique(res$cluster_class)
   clusts <- clusts[order(clusts)]
   ind <- which(!clusts %in% "Null" & !clusts %in% "Junk")
@@ -141,7 +140,7 @@ junk_clust_plot <- function(res, xrange = NULL, sig = NULL,
     clust_label <- NULL
   }
   if (sum(ind) > 0) {
-    for (i in seq_len(ind)) {
+    for (i in seq_len(length(ind))) {
       mn <- res$cluster_mean[res$cluster == as.numeric(clusts[ind[i]])][1]
       clust_label <- c(clust_label, paste0("cluster_", ind[i]))
       col <- cbpalette[i]
@@ -151,13 +150,13 @@ junk_clust_plot <- function(res, xrange = NULL, sig = NULL,
     }
   }
   p <- p + ggplot2::geom_text(data = annotations,
-                            ggplot2::aes(x = xpos, y = ypos, hjust = hjustvar, 
+                            ggplot2::aes(x = xpos, y = ypos, hjust = hjustvar,
                                            vjust = vjustvar,
                                            label = annotateText), size = 3) +
     ggplot2::guides(color = ggplot2::guide_legend(title = "Cluster",
                                                   labels = clust_label)) +
     ggplot2::xlim(minx, maxx)
-  p <- p + ggplot2::ylim(miny, maxy) +
+  p <- p +
     ggplot2::ylab("") + ggplot2::xlab("Two-stage ratio estimate") +
     ggplot2::ggtitle("Null and/or junk observations (top)\nand cluster
                      partitioned ratio estimates (bottom)") +
@@ -171,7 +170,7 @@ junk_clust_plot <- function(res, xrange = NULL, sig = NULL,
     )
 
   if (null_mixture & sum(null_obs) > 0) {
-    p <- p + ggplot2::stat_function(
+    p <- p + ggplot2::geom_line(stat = "function",
       fun = scaled_dnorm,
       args = with(res, c(mean = mu_null, sd = sig_null, log = FALSE,
                          scale = shrink)),

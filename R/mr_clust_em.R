@@ -365,7 +365,7 @@ mr_clust_em <- function(theta, theta_se, bx, by, bxse, byse,
       }
       count0 <- count0 + 1
     }
-    bic_clust_mx[count_k] <- max(bic_clust[(count0 - 
+    bic_clust_mx[count_k] <- max(bic_clust[(count0 -
                                               (rand_num + 2)):(count0 - 1)])
 
     if ((count_k > stop_bic_iter) & (i >= min_clust_search)) {

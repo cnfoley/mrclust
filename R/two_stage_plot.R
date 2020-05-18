@@ -77,7 +77,7 @@ two_stage_plot <- function(res, bx, by, bxse, byse, obs_names) {
     clust_label <- NULL
   }
   if (sum(ind) > 0) {
-    for (i in seq_len(ind)) {
+    for (i in seq_len(length(ind))) {
       mn <- res$cluster_mean[res$cluster == as.numeric(clusts[ind[i]])][1]
       clust_label <- c(clust_label, paste0("cluster_", ind[i]))
       col <- cbpalette[names(cbpalette) == clusts[ind[i]]]

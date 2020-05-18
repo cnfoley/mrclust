@@ -25,7 +25,7 @@ rij <- function(i, j, pi_clust, theta, theta_sd, theta_clust, junk_mixture,
     num[num < 1e-300] <- 1e-300
     den <- rowSums(num)
   } else {
-    tmp_lg_num <- log_norm(i, j = seq_len(theta_clust), tmp_lgt,
+    tmp_lg_num <- log_norm(i, j = seq_len(length(theta_clust)), tmp_lgt,
                            tmp_lgt2 = length(theta_clust),
                            theta, theta_sd, theta_clust)
     num <- exp(matrix(rep(log(pi_clust[j]), each = tmp_lgt) + tmp_lg_num,
