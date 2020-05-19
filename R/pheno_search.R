@@ -3,7 +3,7 @@ pheno_search <- function(variant_clusters, p_value = 1e-5, r2 = 0.8,
                          catalogue = "GWAS", proxies = "None", build = 37) {
   tmp_search <- names(variant_clusters)
   trait_search <- data.frame(matrix(vector(), 0, 5, dimnames = list(c(),
-        c("cluster", "trait", "associated.snps", "total.snps", "p.cut.off"))),
+        c("cluster", "trait", "associated_snps", "total_snps", "p_cut_off"))),
         stringsAsFactors = F)
   trt_count <- 1
   for (i_clst in seq_len(length(tmp_search))) {

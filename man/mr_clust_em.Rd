@@ -119,7 +119,7 @@ whose r2>=proxy_r2 to be included in the trait search. Default r2=0.8.}
 
 \item{proxies}{character, for use with trait search. From Phenoscanner
 (http://www.phenoscanner.medschl.cam.ac.uk/information/) "the proxies
-database to be searched (options: None, AFR, AMR, EAS, EUR, SAS)". 
+database to be searched (options: None, AFR, AMR, EAS, EUR, SAS)".
 Default setting is proxies = "None"}
 
 \item{build}{integer, for use with trait search. From Phenoscanner

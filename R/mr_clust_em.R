@@ -410,7 +410,7 @@ mr_clust_em <- function(theta, theta_se, bx, by, bxse, byse,
     }
     res <- list(
       results = list(all = results_all, best = results_best),
-      cluster_membership = variant_clusters, plots = list(two.stage = plot_2,
+      cluster_membership = variant_clusters, plots = list(two_stage = plot_2,
                                                           split_plot = plot_1),
       log_likelihood = log_like, bic = bic_clust
     )

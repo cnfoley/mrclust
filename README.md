@@ -1,10 +1,19 @@
 # mrclust
-R package for investigating clustered heterogeneity in Mendelian randomization (MR) analyses.
+R package for investigating clustered heterogeneity in Mendelian randomization
+(MR) analyses.
 
-Genetic variants which recover similar estimates of the causal effect of the risk-factor on the outcome - i.e. their ratio-estimates are similar in direction, magnitude and precision - can form distinct clusters in MR analyses. We call this `clustered heterogeneity'. Each cluster might represent a distinct pathway with which the risk-factor is related to the outcome and hence clustered heterogeneity is interesting to investigate as the identity of the genetic variants in the clusters may reveal information about the risk factor and how it relates to the outcome. 
+Genetic variants which recover similar estimates of the causal effect of the
+risk-factor on the outcome - i.e. their ratio-estimates are similar in
+direction, magnitude and precision - can form distinct clusters in MR analyses.
+We call this `clustered heterogeneity'. Each cluster might represent a distinct
+pathway with which the risk-factor is related to the outcome and hence clustered
+heterogeneity is interesting to investigate as the identity of the genetic
+variants in the clusters may reveal information about the risk factor and how it
+relates to the outcome. 
 
 ## Functions
-* mr_clust_em - performs expectation-maximisation (EM) based model fitting of the MR-Clust mixture model.
+* mr_clust_em - performs expectation-maximisation (EM) based model fitting of
+the MR-Clust mixture model.
 
 ## Installation
 1. install.packages("devtools")
@@ -15,7 +24,8 @@ Genetic variants which recover similar estimates of the causal effect of the ris
 
 
 ## Example
-\# Regression coefficients and standard errors from systolic blood pressure and coronary artery disease studies.
+\# Regression coefficients and standard errors from systolic blood pressure and
+coronary artery disease studies.
 * sbp.cad = mrclust::SBP_CAD;
 * bx = sbp.cad$bx;
 * bxse = sbp.cad$bxse;
@@ -29,11 +39,15 @@ Genetic variants which recover similar estimates of the causal effect of the ris
 * snp.names = sbp.cad$chr.pos;
 
 ### Clustering analysis
-* res_em = mr_clust_em(theta=ratio.est, theta.se=ratio.est.se, bx=bx, by=by, bxse=bxse, byse=byse,
-                       obs.names = snp.names);
+* res_em = mr_clust_em(theta=ratio.est, theta.se=ratio.est.se, bx=bx, by=by,
+bxse=bxse, byse=byse, obs.names = snp.names);
 ### Table of variant-cluster allocations
 * head(res_em$results$best);
 
 ### A cluster annotated scatter-plot of the G-X and G-Y associations
-* plot.sbp.best = res_em$plots$two.stage + ggplot2::xlim(0, max(abs(bx)+2*bxse)) + ggplot2::xlab("Genetic association with SBP") + ggplot2::ylab("Genetic association with CAD") + ggplot2::ggtitle("");
+* plot.sbp.best = res_em$plots$two.stage +
+ggplot2::xlim(0, max(abs(bx)+2*bxse)) +
+ggplot2::xlab("Genetic association with SBP") +
+ggplot2::ylab("Genetic association with CAD") +
+ggplot2::ggtitle("");
 * plot.sbp.best;
