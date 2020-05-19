@@ -314,13 +314,13 @@ mr_clust_em <- function(theta, theta_se, bx, by, bxse, byse,
           }
           pi_tmp[[count2]] <- pi_clust
           theta_tmp[[count2]] <- theta_clust
-          loglik.tmp[count2] <- tmp_loglik
+          loglik_tmp[count2] <- tmp_loglik
           count2 <- count2 + 1
         }
-        mx <- which.max(loglik.tmp)
+        mx <- which.max(loglik_tmp)
         theta_clust <- theta_tmp[[mx]]
         pi_clust <- pi_tmp[[mx]]
-        tmp_loglik <- loglik.tmp[mx]
+        tmp_loglik <- loglik_tmp[mx]
         sig <- sigs[mx]
       } else {
         pi_clust <- clust_probs # initialise cluster class probabilities
