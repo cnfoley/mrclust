@@ -1,6 +1,6 @@
 ---
 title: "MR-Clust vignette"
-author: "Name Surname"
+author: "Chris Foley"
 date: "`r Sys.Date()`"
 output:
   pdf_document: default
