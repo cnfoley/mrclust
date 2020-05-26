@@ -4,62 +4,138 @@
 \alias{mr_clust_em}
 \title{MR-Clust mixture model fitting}
 \usage{
-mr_clust_em(theta, theta.se, bx, by, bxse, byse, obs.names = NULL,
-  max.iter = 5000, tol = 1e-05, junk.sd = NULL, junk.mean = 0,
-  stop.bic.iter = 5, min.clust.search = 10,
-  results.list = list("all", "best"), cluster.membership = list(by.prob
-  = 0.1, bound = 0), plot.results = list("best", min.pr = 0.5),
-  trait.search = FALSE, trait.pvalue = 1e-05, proxy.r2 = 0.8,
-  catalogue = "GWAS", proxies = "None", build = 37)
+mr_clust_em(
+  theta,
+  theta_se,
+  bx,
+  by,
+  bxse,
+  byse,
+  obs_names = NULL,
+  max_iter = 5000,
+  tol = 1e-05,
+  junk_sd = NULL,
+  junk_mean = 0,
+  stop_bic_iter = 5,
+  min_clust_search = 10,
+  results_list = list("all", "best"),
+  cluster_membership = list(by_prob = 0.1, bound = 0),
+  plot_results = list("best", min_pr = 0.5),
+  trait_search = FALSE,
+  trait_pvalue = 1e-05,
+  proxy_r2 = 0.8,
+  catalogue = "GWAS",
+  proxies = "None",
+  build = 37
+)
 }
 \arguments{
-\item{theta}{numeric vector of length the number of variants, the i-th element is a ratio-estimate for the i-th genetic variant.}
+\item{theta}{numeric vector of length the number of variants,
+the i-th element is a ratio-estimate for the i-th genetic variant.}
 
-\item{theta.se}{numeric vector of length the number of variants, the i-th element is the standard error of the ratio-estimate for the i-th genetic variant.}
+\item{theta_se}{numeric vector of length the number of variants,
+the i-th element is the standard error of the ratio-estimate
+for the i-th genetic variant.}
 
-\item{bx}{numeric vector of length the number of variants, the i-th element is the estimated regression coefficient - i.e. beta-x value - relating the i-th genetic variant to the risk-factor.}
+\item{bx}{numeric vector of length the number of variants,
+the i-th element is the estimated regression coefficient -
+i.e. beta-x value - relating the i-th genetic variant to the risk-factor.}
 
-\item{by}{numeric vector of length the number of variants, the i-th element is the estimated regression coefficient - i.e. beta-y value - relating the i-th genetic variant to the outcome.}
+\item{by}{numeric vector of length the number of variants, the i-th element
+is the estimated regression coefficient - i.e. beta-y value - relating the
+i-th genetic variant to the outcome.}
 
-\item{bxse}{numeric vector of length the number of variants, the i-th element is the standard error of the estimated regression coefficient relating the i-th genetic variant to the risk-factor.}
+\item{bxse}{numeric vector of length the number of variants, the i-th element
+is the standard error of the estimated regression coefficient relating the
+i-th genetic variant to the risk-factor.}
 
-\item{byse}{numeric vector of length the number of variants, the i-th element is the standard error of the estimated regression coefficient relating the i-th genetic variant to the outcome.}
+\item{byse}{numeric vector of length the number of variants, the i-th element
+is the standard error of the estimated regression coefficient relating the
+i-th genetic variant to the outcome.}
 
-\item{obs.names}{character vector of length the number of variants, the i-th element is the name of the i-th genetic variants - e.g. the rsID.}
+\item{obs_names}{character vector of length the number of variants,
+the i-th element is the name of the i-th genetic variants - e.g. the rsID.}
 
-\item{max.iter}{numeric integer denoting the maximum number of iterations to take before stopping the EM-algorithm's search for a maxima in the log-likelihood.}
+\item{max_iter}{numeric integer denoting the maximum number of iterations to
+take before stopping the EM-algorithm's search for a maxima in the
+log-likelihood.}
 
-\item{tol}{numeric scalar denoting the maximum absolute difference between two computations of the log-likelihood with which we accept that a maxima in the log-likelihood has been computed.}
+\item{tol}{numeric scalar denoting the maximum absolute difference between
+two computations of the log-likelihood with which we accept that a maxima in
+the log-likelihood has been computed.}
 
-\item{junk.sd}{numeric scalar denoting the scale parameter in the generalised t-distribution}
+\item{junk_sd}{numeric scalar denoting the scale parameter in the generalised
+t-distribution}
 
-\item{junk.mean}{numeric scalar denoting the mean of the generalised t-distribution. By default mean is set to zero.}
+\item{junk_mean}{numeric scalar denoting the mean of the generalised
+t-distribution. By default mean is set to zero.}
 
-\item{stop.bic.iter}{numeric integer I, for computational efficiency - particularly when analysing large numbers of variants - we can stop the EM-algorithm if the BIC is monotonic increasing over the previous I increases in the number of clusters K. By default evidence supporting at least 10 clusters in the data is computed and so, for example, if the BIC from models which assume 6 clusters; 7 clusters; ... or; 10 clusters is monotonic increasing - in the number of clusters K -then the EM-algorithm is stopped and the model whose K minimises the BIC is returned.}
+\item{stop_bic_iter}{numeric integer I, for computational efficiency -
+particularly when analysing large numbers of variants - we can stop the
+EM-algorithm if the BIC is monotonic increasing over the previous I increases
+ in the number of clusters K. By default evidence supporting at least 10
+ clusters in the data is computed and so, for example, if the BIC from models
+  which assume 6 clusters; 7 clusters; ... or; 10 clusters is monotonic
+  increasing - in the number of clusters K -then the EM-algorithm is stopped
+  and the model whose K minimises the BIC is returned.}
 
-\item{min.clust.search}{numeric integer which denotes the minimum number of clusters searched for in the data - default computes evidence supporting up to K=10 clusters which might explain any clustered heterogeneity in the data.}
+\item{min_clust_search}{numeric integer which denotes the minimum number of
+clusters searched for in the data - default computes evidence supporting up
+to K=10 clusters which might explain any clustered heterogeneity in the data.}
 
-\item{results.list}{character list allowing users to choose whether to return a table with the variants assigned to: "all" of the clusters; a single "best" cluster or; both. By default we return both, i.e. results.list = list("all", "best").}
+\item{results_list}{character list allowing users to choose whether to return
+a table with the variants assigned to: "all" of the clusters; a single
+"best" cluster or; both. By default we return both, i.e. results_list =
+list("all", "best").}
 
-\item{cluster.membership}{numeric list which allows users to output a list which, for each cluster, returns the variants assigned to the cluster by stratified by the probability of belonging to the cluster. By default, cluster.membership = list(by.prob = 0.1, bound = 0); so that MRClust returns a list, which for each cluster, outputs the variants assigned to the cluster with probability between (0.9,1); (0.8,0.9);... and finally; (0.1,0), i.e. by probability increments 0.1 from 1 to a lower bound of 0.}
+\item{cluster_membership}{numeric list which allows users to output a list
+which, for each cluster, returns the variants assigned to the cluster by
+stratified by the probability of belonging to the cluster. By default,
+cluster_membership = list(by_prob = 0.1, bound = 0); so that MRClust
+returns a list, which for each cluster, outputs the variants assigned
+to the cluster with probability between (0.9,1); (0.8,0.9);... and finally;
+(0.1,0), i.e. by probability increments 0.1 from 1 to a lower bound of 0.}
 
-\item{plot.results}{numeric list which allows users to plot the output of MRClust. By default, plot.results = list("best", min.pr = 0.5); so that the best clustering is plotted with variants assigned to a cluster with probability above 0.5.}
+\item{plot_results}{numeric list which allows users to plot the output of
+MRClust. By default, plot_results = list("best", min_pr = 0.5); so that the
+best clustering is plotted with variants assigned to a cluster with
+probability above 0.5.}
 
-\item{trait.search}{logical, for each of the non-null and non-junk clusters search phenoscanner for traits associated with the variants.}
+\item{trait_search}{logical, for each of the non-null and non-junk clusters
+search phenoscanner for traits associated with the variants.}
 
-\item{trait.pvalue}{numeric scalar for use with trait.search, representing the maximum p-value with with at least one variant in the cluster must be associated with a trait for it to be returned in the phenoscanner search. Deafult value is GWA significance, i.e. 5*10^-8.}
+\item{trait_pvalue}{numeric scalar for use with trait_search, representing
+the maximum p-value with with at least one variant in the cluster must be
+associated with a trait for it to be returned in the phenoscanner search.
+Default value is GWA significance, i.e. 5*10^-8.}
 
-\item{proxy.r2}{numeric scalar for use with trait search, allowing variants whose r2>=proxy.r2 to be included in the trait search. Default r2=0.8.}
+\item{proxy_r2}{numeric scalar for use with trait search, allowing variants
+whose r2>=proxy_r2 to be included in the trait search. Default r2=0.8.}
 
-\item{catalogue}{character, for use with trait search. From Phenoscanner (http://www.phenoscanner.medschl.cam.ac.uk/information/) "the catalogue to be searched (options: None, GWAS, eQTL, pQTl, mQTL, methQTL)". Default setting is catalogue = "GWAS".}
+\item{catalogue}{character, for use with trait search. From Phenoscanner
+(http://www.phenoscanner.medschl.cam.ac.uk/information/) "the catalogue to be
+ searched (options: None, GWAS, eQTL, pQTl, mQTL, methQTL)". Default setting
+ is catalogue = "GWAS".}
 
-\item{proxies}{character, for use with trait search. From Phenoscanner (http://www.phenoscanner.medschl.cam.ac.uk/information/) "the proxies database to be searched (options: None, AFR, AMR, EAS, EUR, SAS)". Default setting is proxies = "None"}
+\item{proxies}{character, for use with trait search. From Phenoscanner
+(http://www.phenoscanner.medschl.cam.ac.uk/information/) "the proxies
+database to be searched (options: None, AFR, AMR, EAS, EUR, SAS)".
+Default setting is proxies = "None"}
 
-\item{build}{integer, for use with trait search. From Phenoscanner (http://www.phenoscanner.medschl.cam.ac.uk/information/) "Human genome build numbers (options: 37, 38; default: 37)". Default setting is build = 37.}
+\item{build}{integer, for use with trait search. From Phenoscanner
+(http://www.phenoscanner.medschl.cam.ac.uk/information/) "Human genome
+build numbers (options: 37, 38; default: 37)". Default setting is build = 37.}
 }
 \value{
-Returned are: estimates of the putative number of clusters in the sample, complete with allocation probabilities and summaries of the association estimates for each variant; plots which visualise the allocation of variants to clusters and; several summaries of the fitting process, i.e. the BIC and likelihood estimates.
+Returned are: estimates of the putative number of clusters in the
+sample, complete with allocation probabilities and summaries of the
+association estimates for each variant; plots which visualise the allocation
+of variants to clusters and; several summaries of the fitting process, i.e.
+the BIC and likelihood estimates.
 }
 \description{
-Assessment of clustered heterogeneity in Mendelian randomization analyses using expectation-maximisation (EM) based model fitting of the MR-Clust mixture model. Function output includes both data-tables and a visualisation of the assingment of variants to clusters.
+Assessment of clustered heterogeneity in Mendelian randomization analyses
+using expectation-maximisation (EM) based model fitting of the MR-Clust
+mixture model. Function output includes both data-tables and a visualisation
+of the assingment of variants to clusters.
 }

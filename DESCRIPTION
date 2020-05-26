@@ -1,16 +1,21 @@
 Package: mrclust
 Type: Package
-Title: Identifying clustered heterogeneity in Mendelian randomization analyses
+Title: Identifying Clustered Heterogeneity in Mendelian Randomization Analyses
 Version: 0.1.0
 Author: Christopher Neal Foley
 Maintainer: The package maintainer <christopher.foley@mrc-bsu.cam.ac.uk>
-Description: Performs likelihood based clustering on univariate observations with known uncertainty (via standard error data), whilst accounting for possible null and junk componenets in the sample.
+Description: Performs likelihood based clustering on univariate observations with known uncertainty (via standard error data), whilst accounting for possible null and junk components in the sample.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: ggplot2, RColorBrewer, mclust, data.table, MendelianRandomization
-RoxygenNote: 6.1.1
+Depends: R (>= 3.5)
+Imports: 
+  ggplot2, 
+  RColorBrewer, 
+  MendelianRandomization
+RoxygenNote: 7.1.0
 Suggests: 
     knitr,
+    data.table, 
     rmarkdown
 VignetteBuilder: knitr

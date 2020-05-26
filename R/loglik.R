@@ -1,20 +1,26 @@
-loglik = function(m, pi.clust, theta, theta.sd, theta.clust, junk.mixture, df, mu, sig, null.mixture, mu.null, sig.null){
-  i = 1:m;
-  if(junk.mixture | null.mixture){
-    K = length(theta.clust) - sum(junk.mixture) - sum(null.mixture);
-  }else{
-    K = length(theta.clust);
+loglik <- function(m, pi_clust, theta, theta_sd, theta_clust,
+                   junk_mixture, df, mu, sig,
+                   null_mixture, mu_null, sig_null) {
+  i <- 1:m
+  if (junk_mixture | null_mixture) {
+    k <- length(theta_clust) - sum(junk_mixture) - sum(null_mixture)
+  } else {
+    k <- length(theta_clust)
   }
-  tmp.lg.den = log.norm(i, j = 1:K, m, tmp.lgt2 = K, theta, theta.sd, theta.clust);
-  if(null.mixture){
-    tmp.lg.den = c(tmp.lg.den, null.den(x = theta, mu = mu.null, sig = sig.null, log = TRUE));
+  tmp_lg_den <- log_norm(i, j = 1:k, m, tmp_lgt2 = k, theta, theta_sd,
+                         theta_clust)
+  if (null_mixture) {
+    tmp_lg_den <- c(tmp_lg_den, null_den(x = theta, mu = mu_null,
+                                          sig = sig_null, log = TRUE))
   }
-  if(junk.mixture){
-    tmp.lg.den = c(tmp.lg.den, gen.t(theta, df = df, mu = 0, sig = sig, log = TRUE));
+  if (junk_mixture) {
+    tmp_lg_den <- c(tmp_lg_den, gen_t(theta, df = df, mu = 0, sig = sig,
+                                       log = TRUE))
   }
 
-  tmp = exp(matrix(rep(log(pi.clust), each  = m) + tmp.lg.den, nrow = m, ncol = length(pi.clust)));
-  tmp.rowsum = rowSums(tmp)
-  res = sum(log(tmp.rowsum));
+  tmp <- exp(matrix(rep(log(pi_clust), each = m) + tmp_lg_den, nrow = m,
+                    ncol = length(pi_clust)))
+  tmp_rowsum <- rowSums(tmp)
+  res <- sum(log(tmp_rowsum))
   return(res)
 }
