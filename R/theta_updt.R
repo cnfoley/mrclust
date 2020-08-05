@@ -13,14 +13,15 @@ theta_updt <- function(j, m, theta, theta_sd, theta_clust, pi_clust,
   } else {
     sum(tmp * theta)
   }
+  new_theta <- num / den
   null_jk <- sum(null_mixture) + sum(junk_mixture)
   if (null_mixture & null_jk == 2) {
-    num[length(j) - 1] <- mu_null
+    new_theta[length(j) - 1] <- mu_null
   } else if (null_mixture & null_jk == 1) {
-    num[length(j)] <- mu_null
+    new_theta[length(j)] <- mu_null
   }
   if (junk_mixture) {
-    num[length(j)] <- mu
+    new_theta[length(j)] <- mu
   }
   return(num / den)
 }
