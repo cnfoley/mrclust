@@ -18,7 +18,7 @@ the MR-Clust mixture model.
 ## Installation
 1. install.packages("devtools")
 2. library(devtools)
-3. install_github("cnfoley/mrclust", build_vignettes = TRUE)
+3. install_github("cnfoley/mrclust", build_vignettes = FALSE)
 4. library(mrclust)
 5. browseVignettes("mrclust")
 
