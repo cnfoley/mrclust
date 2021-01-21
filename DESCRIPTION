@@ -12,7 +12,8 @@ Depends: R (>= 3.5)
 Imports: 
   ggplot2, 
   RColorBrewer, 
-  MendelianRandomization
+  MendelianRandomization,
+  knitr, rmarkdown
 RoxygenNote: 7.1.1
 Suggests: 
     knitr,
