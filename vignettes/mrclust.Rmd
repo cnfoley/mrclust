@@ -1,6 +1,6 @@
 ---
 title: "MR-Clust vignette"
-author: "Chris Foley"
+author: "Christopher Foley"
 date: "`r Sys.Date()`"
 output:
   pdf_document: default
@@ -150,7 +150,7 @@ employs algorithm 1 in the MR-Clust manuscript):
 ############################
 ########### SBP-CAD analysis
 ############################
-set.seed(2000030885)
+set.seed(123)
 res_em = mr_clust_em(theta = ratio_est, theta_se = ratio_est_se, bx = bx,
                      by = by, bxse = bxse, byse = byse, obs_names = snp_names)
 
