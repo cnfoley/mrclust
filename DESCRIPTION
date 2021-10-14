@@ -3,7 +3,7 @@ Type: Package
 Title: Identifying Clustered Heterogeneity in Mendelian Randomization Analyses
 Version: 0.1.0
 Author: Christopher Neal Foley
-Maintainer: The package maintainer <christopher.foley@mrc-bsu.cam.ac.uk>
+Maintainer: The package maintainer <chris.neal.foley@gmail.com>
 Description: Performs likelihood based clustering on univariate observations with known uncertainty (via standard error data), whilst accounting for possible null and junk components in the sample.
 License: GPL-3
 Encoding: UTF-8

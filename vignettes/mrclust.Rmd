@@ -51,7 +51,7 @@ interpret - (i) a null distribution, in which the ratio-estimates are centred
 around zero and; (ii) a junk distribution, which aims to model highly dispersed
 ratio-estimates which are considered outliers in the sample. In some situations,
 the junk-component may fail to capture all outliers in the sample, instead these
-observations may appear in clusters comprising a single gnetic variant. Unless
+observations may appear in clusters comprising a single genetic variant. Unless
 there is some underlying motivation for doing so, we do not recommend
 interpreting results from clusters containing one (or a small number of)
 genetic variants.
@@ -79,7 +79,7 @@ from our manuscript.
 
 Here we replicate the results from the MR-Clust manuscript: assessing the
 presence of clustered heterogeneity in the analysis of systolic blood pressure
-(SBP) and it's effects on coronary artery disease (CAD) risk. We begin by
+(SBP) and its effects on coronary artery disease (CAD) risk. We begin by
 loading the package and the SBP/CAD summary data. These data are avaiable with
 the package and can be found by typing
 
