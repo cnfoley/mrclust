@@ -14,7 +14,6 @@ relates to the outcome.
 ## Functions
 * mr_clust_em - performs expectation-maximisation (EM) based model fitting of
 the MR-Clust mixture model.
-* mr_clust_em_jnk_optional - update of "mr_clust_em" to optionally exclude the junk-mixture distribution.
 ## Installation
 1. install.packages("devtools")
 2. library(devtools)
